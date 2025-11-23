@@ -22,8 +22,8 @@ function setEmbed(){
     min?minArray[minArray.length]=min:"";
     max?maxArray[maxArray.length]=max:"";
   });
-  let min=minArray.sort(function(a,b){return a-b})[0];
-  let max=maxArray.sort(function(a,b){return b-a})[0];
+  let min=minArray.sort(function(a,b){return b-a})[0];
+  let max=maxArray.sort(function(a,b){return a-b})[0];
   let canvas=id("display");
   let ctx=canvas.getContext("2d");
   let width=id("result").offsetWidth*0.8;
