@@ -25,4 +25,4 @@ function setEmbed(){
   let max=maxArray.sort(function(a,b){return b-a})[0];
   console.log(min,max);
 }
-id("config").oninput=setEmbed();
+id("config").oninput=setEmbed;
