@@ -40,6 +40,7 @@ function setEmbed(){
     ctx.beginPath();
     ctx.moveTo(x,0);
     ctx.lineWidth=1;
+    ctx.strokeStyle="#d3d5d9";
     ctx.lineTo(x,height*0.7);
     ctx.stroke();
     let year=Math.floor((min||1980)/10)*10+i*10;
