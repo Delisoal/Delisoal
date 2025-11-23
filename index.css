@@ -38,15 +38,14 @@ header{
     flex-direction:column;
     justify-content:space-between;
 }
-.result{
-    height:60%;
-}
 .description{
     height:calc(40% - 1em);
 }
 .result{
+    height:60%;
     font-weight:bold;
     text-align:center;
+    font-size:1.5em;
 }
 select{
     width:90%;
