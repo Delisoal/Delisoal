@@ -11,12 +11,13 @@ header{
     font-weight:bold;
     font-size:1.5em;
     margin:0.8em;
+    margin-top:1em;
 }
 .parent{
     display:flex;
     flex-wrap:wrap;
     justify-content:space-between;
-    height:calc(90% - 2.5em);
+    height:calc(90% - 3em);
     width:90vw;
 }
 .control,.result,.description{
