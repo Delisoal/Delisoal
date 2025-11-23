@@ -27,6 +27,7 @@ header{
     padding:1em 2em;
     font-size:1.1em;
     overflow-y:auto;
+    line-height:2;
 }
 .left{
     width:40%;
