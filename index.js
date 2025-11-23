@@ -26,9 +26,13 @@ function setEmbed(){
   let max=maxArray.sort(function(a,b){return a-b})[0];
   let canvas=id("display");
   let ctx=canvas.getContext("2d");
-  let width=id("result").offsetWidth*0.8;
-  let height=id("result").offsetHeight*0.6;
+  let modeldiv=document.createElement("div");
   let nowYear=new Date().getFullYear();
+  let height=id("result").offsetHeight*0.6;
+  modeldiv.style.cssText="width:90%;height:1px";
+  id("result").appendChild(modeldiv);
+  let width=modeldiv.offsetWidth;
+  modeldiv.remove();
   canvas.width=width;
   canvas.height=height;
   ctx.font="12px sans-serif";
