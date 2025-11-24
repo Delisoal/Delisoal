@@ -7,6 +7,7 @@ function setMP(){
   }).then(function(html){
     id("config").innerHTML=html;
     setEmbed();
+    window.onresize=setEmbed;
   });
 }
 setMP();
