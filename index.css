@@ -31,10 +31,10 @@ header{
     line-height:2;
 }
 .left{
-    width:40%;
+    width:15em;
 }
 .right{
-    width:calc(60% - 1em);
+    width:calc(100% - 16em);
     display:flex;
     flex-direction:column;
     justify-content:space-between;
@@ -75,7 +75,6 @@ select{
     .right{
         width:90vw;
         margin:1em auto;
-        height:40vh;
     }
 }
 @media screen and (min-width:650px) and (orientation: portrait){
