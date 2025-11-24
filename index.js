@@ -55,10 +55,10 @@ function setEmbed(){
     ctx.moveTo(x,0);
     ctx.lineWidth=1;
     ctx.strokeStyle="#d3d5d9";
-    ctx.lineTo(x,height*0.7);
+    ctx.lineTo(x,height*0.65);
     ctx.stroke();
     let year=Math.floor((min||1980)/10)*10+i*10;
-    ctx.fillText(year,x,height*0.75);
+    ctx.fillText(year,x,height*0.8);
   }
   if(min<(max||nowYear)){
     let baseYear=Math.floor((min||1980)/10)*10;
