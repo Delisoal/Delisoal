@@ -75,7 +75,7 @@ select{
     .right{
         width:90vw;
         margin:1em auto;
-        margin-botom:2em;
+        margin-bottom:2em;
     }
 }
 @media screen and (min-width:650px) and (orientation: portrait){
