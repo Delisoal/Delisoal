@@ -40,10 +40,10 @@ header{
     justify-content:space-between;
 }
 .description{
-    height:calc(100% - 16em);
+    height:min(calc(100% - 16em),calc(40% - 1em));
 }
 .result{
-    height:15em;
+    height:max(15em,60%);
     font-weight:bold;
     text-align:center;
 }
