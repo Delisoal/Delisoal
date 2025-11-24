@@ -8,21 +8,21 @@ function setMP(){
     id("config").innerHTML=html;
     setEmbed();
     window.onresize=setEmbed;
+    id("source").innerHTML="";
+    document.querySelectorAll(".source").forEach(function(element){
+      let li=document.createElement("li");
+      let clone=element.cloneNode(true);
+      clone.classList.remove("source");
+      clone.target="_blank";
+      li.appendChild(clone);
+      id("source").appendChild(li);
+      element.remove();
+    });
   });
 }
 setMP();
 id("mpname").oninput=setMP;
 function setEmbed(){
-  id("source").innerHTML="";
-  document.querySelectorAll(".source").forEach(function(element){
-    let li=document.createElement("li");
-    let clone=element.cloneNode(true);
-    clone.classList.remove("source");
-    clone.target="_blank";
-    li.appendChild(clone);
-    id("source").appendChild(li);
-    element.remove();
-  });
   let minArray=[];
   let maxArray=[];
   document.querySelectorAll("#config input,#config select").forEach(function(element){
