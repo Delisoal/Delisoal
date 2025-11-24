@@ -37,11 +37,11 @@ function setEmbed(){
   let ctx=canvas.getContext("2d");
   let modeldiv=document.createElement("div");
   let nowYear=new Date().getFullYear();
-  let height=id("result").offsetHeight*0.6;
   let margin=30;
-  modeldiv.style.cssText="width:90%;height:1px";
+  modeldiv.style.cssText="width:90%;height:calc(100% - 3em)";
   id("result").appendChild(modeldiv);
   let width=modeldiv.offsetWidth;
+  let height=modeldiv.offsetHeight;
   modeldiv.remove();
   canvas.width=width;
   canvas.height=height;
