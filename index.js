@@ -26,13 +26,18 @@ function setEmbed(){
   let minArray=[];
   let maxArray=[];
   document.querySelectorAll("#config input,#config select").forEach(function(element){
+    function getType(num){
+      return String(num).split("")[4]||"";
+    }
     let min=element.value.split(",")[0];
     let max=element.value.split(",")[1];
-    min?minArray[minArray.length]=min:"";
-    max?maxArray[maxArray.length]=max:"";
+    min?minArray[minArray.length]={value:min,type:getType(min)}:"";
+    max?maxArray[maxArray.length]={value:max,type:getType(max)}:"";
   });
-  let min=minArray.sort(function(a,b){return b-a})[0];
-  let max=maxArray.sort(function(a,b){return a-b})[0];
+  let minObj=minArray.sort(function(a,b){return b.value-a.value})[0];
+  let maxObj=maxArray.sort(function(a,b){return a.value-b.value})[0];
+  let min=minObj.value;
+  let max=maxObj.value;
   let canvas=id("display");
   let ctx=canvas.getContext("2d");
   let modeldiv=document.createElement("div");
@@ -50,30 +55,42 @@ function setEmbed(){
   let count=(Math.ceil(nowYear/10)*10-Math.floor((min||1980)/10)*10)/10;
   let spacing=(width-margin*2)/count;
   for(let i=0;i<count+1;i++){
-    let x=Math.round(margin+i*spacing);
-    ctx.beginPath();
-    ctx.moveTo(x,0);
-    ctx.lineWidth=1;
-    ctx.strokeStyle="#d3d5d9";
-    ctx.lineTo(x,height*0.65);
-    ctx.stroke();
-    let year=Math.floor((min||1980)/10)*10+i*10;
-    ctx.fillText(year,x,height*0.8);
+      let x=Math.round(margin+i*spacing);
+      ctx.beginPath();
+      ctx.moveTo(x,0);
+      ctx.lineWidth=1;
+      ctx.strokeStyle="#d3d5d9";
+      ctx.lineTo(x,height*0.65);
+      ctx.stroke();
+      let year=Math.floor((min||1980)/10)*10+i*10;
+      ctx.fillText(year,x,height*0.8);
   }
   if(min<(max||nowYear)){
-    let baseYear=Math.floor((min||1980)/10)*10;
-    let startIndex=(min-baseYear)/10;
-    let endIndex=((max||nowYear)-baseYear)/10;
-    let barStartX=Math.round(margin+startIndex*spacing);
-    let barEndX=Math.round(margin+endIndex*spacing);
-    let barY=height*0.25;
-    let barHeight=height*0.2;
-    ctx.fillStyle="#4287f5";
-    ctx.fillRect(barStartX,barY,barEndX-barStartX,barHeight);
-    ctx.fillStyle="black";
-    ctx.textAlign="center";
-    ctx.fillText(`${min} - ${max||"販売中"}`,(barStartX+barEndX)/2,barY+barHeight/2+6);
-    id("sp").innerHTML=`${min}年 - ${(max||"販売中")+(max?"年":"")}`;
+      let baseYear=Math.floor((min||1980)/10)*10;
+      let barStartX=Math.round(margin+((min-baseYear)/10)*spacing);
+      let barEndX=Math.round(margin+(((max||nowYear)-baseYear)/10)*spacing);
+      let barY=height*0.25;
+      let barHeight=height*0.2;
+      ctx.beginPath();
+      ctx.fillStyle="#4287f5";
+      ctx.fillRect(barStartX,barY,barEndX-barStartX,barHeight);
+      ctx.closePath();
+      [minObj,maxObj].forEach(function(data){
+          if(data.type=="?"){
+              let subBarStartX=Math.round(margin+((data.value-baseYear)/10)*spacing);
+              let subBarWidth=Math.round(margin+((data.value+10-baseYear)/10)*spacing)-subBarStartX;
+              ctx.beginPath();
+              ctx.fillStyle="#00ffff";
+              ctx.fillRect(subBarStartX,barY,subBarWidth,barHeight);
+              console.log(subBarStartX);
+              ctx.closePath();
+              barEndX+=subBarWidth/2;
+          }
+      });
+      ctx.fillStyle="black";
+      ctx.textAlign="center";
+      ctx.fillText(`${min} - ${max||"販売中"}`,(barStartX+barEndX)/2,barY+barHeight/2+6);
+      id("sp").innerHTML=`${min}年 - ${(max||"販売中")+(max?"年":"")}`;
   }
   else{
     id("sp").innerHTML="エラー";
