@@ -48,7 +48,7 @@ function setEmbed(){
   let minObj=minArray.sort(function(a,b){return b.value-a.value})[0];
   let maxObj=maxArray.sort(function(a,b){return a.value-b.value})[0];
   console.log(minObj,maxObj);
-  let min=minObj.type=="?"?minObj.origin:minObj.value;
+  let min=minObj.origin;
   let max=maxObj?maxObj.value:null;
   let canvas=id("display");
   let ctx=canvas.getContext("2d");
