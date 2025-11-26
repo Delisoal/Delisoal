@@ -5,33 +5,34 @@
     <link href="index.css" rel="stylesheet">
   </head>
   <body>
-      <header>シャープペンシルの年代特定</header>
-      <div class="parent">
-        <div class="left control">
-          商品名：<br>
-          <select id="mpname">
-            <option value="pgx">グラフペンシルシリーズ</option>
-            <option value="graph">ぺんてるグラフシリーズ</option>
-          </select>
-          <div id="config">
-            <div id="embed"></div>
-            <div id="main"></div>
-          </div>
-        </div>
-        <div class="right">
-          <div class="result" id="result">
-            年代<br>
-            <canvas id="display"></canvas>
-            <br>
-            <span id="sp"></span>
-          </div>
-          <div class="description">
-            <b>出典</b>
-            <br>
-            <ul id="source"></ul>
-          </div>
+    <header>シャープペンシルの年代特定</header>
+    <div class="parent">
+      <div class="left control">
+        商品名：<br>
+        <select id="mpname">
+          <option value="pgx">グラフペンシルシリーズ</option>
+          <option value="graph">ぺんてるグラフシリーズ</option>
+        </select>
+        <div id="config">
+          <div id="embed"></div>
+          <div id="main"></div>
         </div>
       </div>
+      <div class="right">
+        <div class="result" id="result">
+          年代<br>
+          <canvas id="display"></canvas>
+          <br>
+          <span id="sp"></span>
+        </div>
+        <div class="description">
+          <b>出典</b>
+          <br>
+          <ul id="source"></ul>
+        </div>
+      </div>
+    </div>
+    <div id="loading"></div>
     <script src="index.js"></script>
   </body>
 </html>
