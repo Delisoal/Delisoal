@@ -105,7 +105,7 @@ function setEmbed(){
           let subBarStartX=Math.round(margin+((data.valid-baseYear)/10)*spacing);
           let subBarWidth=Math.round(margin+((data.valid+10-baseYear)/10)*spacing)-subBarStartX;
           ctx.beginPath();
-          ctx.fillStyle="#80abf2";
+          ctx.fillStyle="#a7c0f2";
           ctx.fillRect(subBarStartX,barY,subBarWidth,barHeight);
           ctx.closePath();
           barEndX+=subBarWidth/2;
