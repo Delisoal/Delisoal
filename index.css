@@ -38,6 +38,7 @@ header{
     display:flex;
     flex-direction:column;
     justify-content:space-between;
+    height:100%;
 }
 .description{
     height:min(calc(100% - 16em),calc(40% - 1em));
