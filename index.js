@@ -3,6 +3,9 @@ function id(id){
 }
 function setMP(){
   id("loading").style.display="";
+  document.querySelectorAll("#config input,#config select").forEach(function(element){
+    element.disabled=true;
+  });
   fetch("./embed/"+id("mpname").value+"?d="+new Date().getTime()).then(function(data){
     return data.text();
   }).then(function(html){
@@ -24,6 +27,9 @@ function setMP(){
         element.remove();
       });
       id("loading").style.display="none";
+      document.querySelectorAll("#config input,#config select").forEach(function(element){
+        element.disabled=false;
+      });
     });
   });
 }
