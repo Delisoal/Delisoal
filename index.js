@@ -47,6 +47,7 @@ function setEmbed(){
   }):"";
   let minObj=minArray.sort(function(a,b){return b.value-a.value})[0];
   let maxObj=maxArray.sort(function(a,b){return a.value-b.value})[0];
+  console.log(minObj,maxObj);
   let min=minObj.type=="?"?minObj.value-10:minObj.value;
   let max=maxObj?maxObj.value:null;
   let canvas=id("display");
@@ -94,7 +95,6 @@ function setEmbed(){
           ctx.beginPath();
           ctx.fillStyle="#00ffff";
           ctx.fillRect(subBarStartX,barY,subBarWidth,barHeight);
-          console.log(subBarStartX);
           ctx.closePath();
           barEndX+=subBarWidth/2;
         }
