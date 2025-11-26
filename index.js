@@ -46,7 +46,7 @@ function setEmbed(){
       return Number(String(num).match(/[0-9]/g).join(""));
     }
     function getAdd(num){
-      return String(num).split("")[5]=="-"?5:10;
+      return Number(String(num).split("?")[1]||10);
     }
     let min=element.value.split(",")[0];
     let max=element.value.split(",")[1];
