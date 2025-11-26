@@ -47,9 +47,8 @@ function setEmbed(){
   }):"";
   let minObj=minArray.sort(function(a,b){return b.value-a.value})[0];
   let maxObj=maxArray.sort(function(a,b){return a.value-b.value})[0];
-  console.log(minObj,maxObj);
   let min=minObj.valid;
-  let max=maxObj?maxObj.value:null;
+  let max=maxObj?maxObj.valid:null;
   let canvas=id("display");
   let ctx=canvas.getContext("2d");
   let modeldiv=document.createElement("div");
