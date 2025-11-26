@@ -5,18 +5,23 @@ function setMP(){
   fetch("./embed/"+id("mpname").value+"?d="+new Date().getTime()).then(function(data){
     return data.text();
   }).then(function(html){
-    id("embed").innerHTML=html;
-    setEmbed();
-    window.onresize=setEmbed;
-    id("source").innerHTML="";
-    document.querySelectorAll(".source").forEach(function(element){
-      let li=document.createElement("li");
-      let clone=element.cloneNode(true);
-      clone.classList.remove("source");
-      clone.target="_blank";
-      li.appendChild(clone);
-      id("source").appendChild(li);
-      element.remove();
+    fetch("./embed/main.html").then(function(data){
+      return data.text();
+    }).then(function(mainHTML){
+      id("embed").innerHTML=html;
+      id("main").innerHTML=mainHTML;
+      setEmbed();
+      window.onresize=setEmbed;
+      id("source").innerHTML="";
+      document.querySelectorAll(".source").forEach(function(element){
+        let li=document.createElement("li");
+        let clone=element.cloneNode(true);
+        clone.classList.remove("source");
+        clone.target="_blank";
+        li.appendChild(clone);
+        id("source").appendChild(li);
+        element.remove();
+      });
     });
   });
 }
