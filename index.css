@@ -20,7 +20,7 @@ header{
     display:flex;
     flex-wrap:wrap;
     justify-content:space-between;
-    height:calc(90% - 3em);
+    height:calc(90vh - 3em);
     width:var(--width);
     margin-bottom:1em;
 }
@@ -46,7 +46,7 @@ header{
     height:100%;
 }
 .description{
-    width:90vw;
+    width:var(--width);
     margin-bottom:2em;
     text-align:start;
 }
@@ -111,7 +111,6 @@ select{
     .right{
         width:var(--width);
         margin-top:1em;
-        height:auto;
     }
 }
 @media screen and (min-width:650px) and (orientation: portrait){
