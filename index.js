@@ -77,8 +77,11 @@ function setEmbed(){
   modeldiv.remove();
   canvas.width=width;
   canvas.height=height;
+  ctx.beginPath();
   ctx.fillStyle="white";
   ctx.fillRect(0,0,width,height);
+  ctx.closePath();
+  ctx.fillStyle="black";
   ctx.font="12px sans-serif";
   ctx.textAlign="center"; 
   let count=(Math.ceil(nowYear/10)*10-Math.floor((min||1980)/10)*10)/10;
