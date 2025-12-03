@@ -46,6 +46,11 @@ header{
     height:100%;
 }
 .description{
+    width:90vw;
+    margin-bottom:2em;
+    text-align:start;
+}
+.share{
     height:min(calc(100% - 16em),calc(40% - 1em));
 }
 .result{
