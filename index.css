@@ -1,3 +1,6 @@
+:root{
+    --width:90vw;
+}
 body{
     margin:0;
     background:#f3f4f6;
@@ -18,7 +21,8 @@ header{
     flex-wrap:wrap;
     justify-content:space-between;
     height:calc(90% - 3em);
-    width:90vw;
+    width:var(--width);
+    margin-bottom:1em;
 }
 .card{
     background:white;
@@ -96,13 +100,12 @@ select{
         text-align:start;
     }
     .left{
-        width:90vw;
+        width:var(--width);
         height:auto;
     }
     .right{
-        width:90vw;
-        margin:1em auto;
-        margin-bottom:2em;
+        width:var(--width);
+        margin-top:1em;
         height:auto;
     }
 }
