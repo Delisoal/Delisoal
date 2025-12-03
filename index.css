@@ -97,13 +97,13 @@ select{
     }
     .left{
         width:90vw;
-        height:40vh;
+        height:auto;
     }
     .right{
         width:90vw;
         margin:1em auto;
         margin-bottom:2em;
-        height:60vh;
+        height:auto;
     }
 }
 @media screen and (min-width:650px) and (orientation: portrait){
