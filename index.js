@@ -108,7 +108,7 @@ function setEmbed(){
   for(let i=0;i<count+1;i++){
     let x=Math.round(margin+i*spacing);
     ctx.beginPath();
-    ctx.moveTo(x,0);
+    ctx.moveTo(x,margin);
     ctx.lineWidth=1;
     ctx.strokeStyle="#d3d5d9";
     ctx.lineTo(x,height*0.65);
