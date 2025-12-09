@@ -1,6 +1,9 @@
 function id(id){
   return document.getElementById(id);
 }
+function getCSS(query,property){
+    return window.getComputedStyle(query).getPropertyValue(property);
+}
 function setMP(){
   id("loading").style.display="";
   document.querySelectorAll("#config input,#config select").forEach(function(element){
@@ -26,6 +29,20 @@ function setMP(){
         id("source").appendChild(li);
         element.remove();
       });
+      id("downloadgraph").onclick=function(){
+        let result=id("result");
+        result.style.width=Number(getCSS(result,"width").replace("px",""))*2;
+        result.style.height=Number(getCSS(result,"height").replace("px",""))*2;
+        setEmbed();
+        let previewLink=id("display").toDataURL();
+        let a=document.createElement("a");
+        a.href=previewLink;
+        a.download="";
+        a.click();
+        result.style.width="";
+        result.style.height="";
+        setEmbed();
+      }
       id("loading").style.display="none";
       document.querySelectorAll("#config input,#config select").forEach(function(element){
         element.disabled=false;
@@ -70,11 +87,13 @@ function setEmbed(){
   let modeldiv=document.createElement("div");
   let nowYear=new Date().getFullYear();
   let margin=30;
-  modeldiv.style.cssText="width:90%;height:calc(90% - 5em)";
+  canvas.style.display="none";
+  modeldiv.style.cssText="width:90%;height:calc(90% - 2em)";
   id("result").appendChild(modeldiv);
   let width=modeldiv.offsetWidth;
   let height=modeldiv.offsetHeight;
   modeldiv.remove();
+  canvas.style.display="";
   canvas.width=width;
   canvas.height=height;
   ctx.beginPath();
