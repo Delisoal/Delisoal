@@ -120,7 +120,7 @@ function setEmbed(){
     let baseYear=Math.floor((min||1980)/10)*10;
     let barStartX=Math.round(margin+((min-baseYear)/10)*spacing);
     let barEndX=Math.round(margin+(((max||nowYear)-baseYear)/10)*spacing);
-    let barY=height*0.25;
+    let barY=height*0.25+margin/2;
     let barHeight=height*0.2;
     ctx.beginPath();
     ctx.fillStyle="#4287f5";
