@@ -88,7 +88,7 @@ function setEmbed(){
   let nowYear=new Date().getFullYear();
   let margin=30;
   canvas.style.display="none";
-  modeldiv.style.cssText="width:90%;height:calc(90% - 2em)";
+  modeldiv.style.cssText="width:90%;height:calc(90% - 5em)";
   id("result").appendChild(modeldiv);
   let width=modeldiv.offsetWidth;
   let height=modeldiv.offsetHeight;
