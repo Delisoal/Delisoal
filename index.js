@@ -101,7 +101,7 @@ function setEmbed(){
   ctx.fillRect(0,0,width,height);
   ctx.closePath();
   ctx.fillStyle="black";
-  ctx.font="12px sans-serif";
+  ctx.font=getCSS(canvas,"--font-size")+"px sans-serif";
   ctx.textAlign="center"; 
   let count=(Math.ceil(nowYear/10)*10-Math.floor((min||1980)/10)*10)/10;
   let spacing=(width-margin*2)/count;
