@@ -31,16 +31,19 @@ function setMP(){
       });
       id("downloadgraph").onclick=function(){
         let result=id("result");
+        let canvas=id("display");
         result.style.width=Number(getCSS(result,"width").replace("px",""))*2;
         result.style.height=Number(getCSS(result,"height").replace("px",""))*2;
+        canvas.style.setProperty("--font-size","24px");
         setEmbed();
-        let previewLink=id("display").toDataURL();
+        let previewLink=canvas.toDataURL();
         let a=document.createElement("a");
         a.href=previewLink;
         a.download="";
         a.click();
         result.style.width="";
         result.style.height="";
+        canvas.style.setProperty("--font-size","");
         setEmbed();
       }
       id("loading").style.display="none";
