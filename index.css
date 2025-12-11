@@ -91,6 +91,9 @@ select{
 #loading img{
     width:min(10vw,50px);
 }
+#display{
+    --font-size:12px;
+}
 @media screen and (max-width:850px),screen and (orientation:portrait){
     body{
         text-align:center;
