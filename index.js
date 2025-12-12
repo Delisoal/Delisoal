@@ -86,13 +86,13 @@ function setEmbed(){
   let min=minObj.valid;
   let max=maxObj?maxObj.valid:null;
   let canvas=id("display");
+  let result=id("result");
   let ctx=canvas.getContext("2d");
   let nowYear=new Date().getFullYear();
   let margin=30;
   canvas.style.display="none";
-  id("result").appendChild(modeldiv);
-  let width=id("result").offsetWidth-Number(getCSS(document.body,"font-size").replace("px",""))*5;
-  let height=id("result").offsetHeight-Number(getCSS(document.body,"font-size").replace("px",""))*5;
+  let width=result.offsetWidth-Number(getCSS(result,"font-size").replace("px",""))*5;
+  let height=result.offsetHeight*90-Number(getCSS(result,"font-size").replace("px",""))*5;
   canvas.style.display="";
   canvas.width=width;
   canvas.height=height;
