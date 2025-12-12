@@ -92,7 +92,7 @@ function setEmbed(){
   let margin=30;
   canvas.style.display="none";
   let width=result.offsetWidth-Number(getCSS(result,"font-size").replace("px",""))*5;
-  let height=result.offsetHeight*90-Number(getCSS(result,"font-size").replace("px",""))*5;
+  let height=result.offsetHeight*0.9-Number(getCSS(result,"font-size").replace("px",""))*5;
   canvas.style.display="";
   canvas.width=width;
   canvas.height=height;
