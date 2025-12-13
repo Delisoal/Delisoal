@@ -114,10 +114,7 @@ function setEmbed(){
     ctx.lineTo(x,height*0.65);
     ctx.stroke();
     let year=Math.floor((min||1980)/10)*10+i*10;
-    if(i==count){
-      year+="（年）";
-    }
-    ctx.fillText(year,x,height*0.8);
+    ctx.fillText(year+"年",x,height*0.8);
   }
   if(min<(max||nowYear)){
     let baseYear=Math.floor((min||1980)/10)*10;
