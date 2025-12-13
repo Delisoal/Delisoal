@@ -34,7 +34,7 @@ function setMP(){
         let canvas=id("display");
         result.style.width=Number(getCSS(result,"width").replace("px",""))*2;
         result.style.height=Number(getCSS(result,"height").replace("px",""))*2;
-        canvas.style.setProperty("--font-size","24px");
+        canvas.style.setProperty("--font-size","30px");
         setEmbed();
         let previewLink=canvas.toDataURL();
         let a=document.createElement("a");
@@ -114,6 +114,9 @@ function setEmbed(){
     ctx.lineTo(x,height*0.65);
     ctx.stroke();
     let year=Math.floor((min||1980)/10)*10+i*10;
+    if(i==count){
+      year+="（年）";
+    }
     ctx.fillText(year,x,height*0.8);
   }
   if(min<(max||nowYear)){
