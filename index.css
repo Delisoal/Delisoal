@@ -92,7 +92,7 @@ select{
     width:min(10vw,50px);
 }
 #display{
-    --font-size:12px;
+    --font-size:15px;
 }
 @media screen and (max-width:850px),screen and (orientation:portrait){
     body{
