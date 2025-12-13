@@ -89,7 +89,7 @@ function setEmbed(){
   let result=id("result");
   let ctx=canvas.getContext("2d");
   let nowYear=new Date().getFullYear();
-  let margin=30;
+  let margin=Number(getCSS(canvas,"--font-size").replace("px",""))*2;
   canvas.style.display="none";
   let width=result.offsetWidth-Number(getCSS(result,"font-size").replace("px",""))*5;
   let height=result.offsetHeight-Number(getCSS(result,"font-size").replace("px",""))*8;
