@@ -34,7 +34,7 @@ function setMP(){
         let canvas=id("display");
         result.style.width=Number(getCSS(result,"width").replace("px",""))*2;
         result.style.height=Number(getCSS(result,"height").replace("px",""))*2;
-        canvas.style.setProperty("--font-size","30px");
+        canvas.style.setProperty("--font-size","24px");
         setEmbed();
         let previewLink=canvas.toDataURL();
         let a=document.createElement("a");
